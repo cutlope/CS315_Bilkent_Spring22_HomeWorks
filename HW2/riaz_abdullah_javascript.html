@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Logically Controlled Loops in Javascript</title>
+  </head>
+  <body>
+    <script>
+      let whileCond = false
+      let i = 0
+      outerLoop: while (i < 50) {
+        while (whileCond != true) {
+          console.log(`Inner While Loop Iteration: ${i}`)
+          i++
+          if (i > 10) {
+            console.log("Exiting Outer While Loop")
+            break outerLoop
+          }
+          if (i == 20) {
+            whileCond = true
+          }
+        }
+        console.log("Inner While Loop Finished Iteration")
+      }
+
+      i = 0
+      whileCond = false
+
+      do {
+        do {
+          console.log(`Do While Loop Iteration: ${i}`)
+          i++
+          if (i > 10) {
+            console.log("Exiting Do While Loop")
+            break
+          }
+        } while (whileCond != true)
+        console.log("Inner Do While Loop Finished Iteration")
+      } while (i < 1)
+    </script>
+  </body>
+</html>

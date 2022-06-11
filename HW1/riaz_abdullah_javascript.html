@@ -1,0 +1,28 @@
+<html>
+
+<script>
+var x = "Global X"  
+
+function foo(){
+	x = "foo local"  ;  	 
+	console.log("\nIn Top Foo: ", x);		//Output can be viewed in the console of browser 
+   
+    
+	function nestedFoo(){
+    	x = "nestedFoo X var"
+    	console.log("\nIn nested Foo: ", x)		//Output can be viewed in the console of browser
+	};
+   	 
+	function nestedfooCaller(){   	 
+    	x = "\nfoo caller x var"
+    	nestedFoo()
+	};
+    
+	nestedFoo();
+	nestedfooCaller();
+}
+
+foo();
+</script>
+
+</html>
